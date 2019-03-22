@@ -31,6 +31,13 @@
     data[--start]=element; //prefix -- returns the new value instead of old
   }
 
+  public void addLast(E element){
+    if(element==null) throw(NullPointerException e);
+    if(size==data.size) resize();
+    if(++end==data.length) end=0
+    data[end]=element;
+  }
+
   @SuppressWarnings("unchecked")
   private void resize(){
     newData = (E[])new Object[data.length*2];
@@ -41,10 +48,8 @@
     }
     data=newData;
     start=0; end=newEnd;
-
   }
   /*
-  public void addLast(E element){ }
   public E removeFirst(){ }
   public E removeLast(){ }
   public E getFirst(){ }
