@@ -34,7 +34,7 @@
   public void addLast(E element){
     if(element==null) throw(NullPointerException e);
     if(size==data.size) resize();
-    if(++end==data.length) end=0
+    if(++end==data.length) end=0;
     data[end]=element;
   }
 
