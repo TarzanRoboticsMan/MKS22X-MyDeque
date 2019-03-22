@@ -34,11 +34,14 @@
   @SuppressWarnings("unchecked")
   private void resize(){
     newData = (E[])new Object[data.length*2];
-    for(int x=start, int i=0;x!=end;x++,i++){
+    newEnd=0;
+    for(int x=start;x!=end;x++){
       if(x=data.length) x=0;
-      newData[i]=data[x];
+      newData[newEnd++]=data[x]; //Pulls value of newEnd and THEN adds 1
     }
     data=newData;
+    start=0; end=newEnd;
+
   }
   /*
   public void addLast(E element){ }
