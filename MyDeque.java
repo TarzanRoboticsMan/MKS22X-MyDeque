@@ -38,6 +38,15 @@
     data[end]=element;
   }
 
+  public E removeFirst(){
+    if(size==0) throw(NoSuchElementException e);
+    if(++start==data.length) start=0; //assigns then pulls value
+  }
+  public E removeLast(){
+    if(size==0) throw(NoSuchElementException e);
+    if(--end==-1) end=data.length-1; //assigns then pulls value
+  }
+
   @SuppressWarnings("unchecked")
   private void resize(){
     newData = (E[])new Object[data.length*2];
@@ -50,8 +59,6 @@
     start=0; end=newEnd;
   }
   /*
-  public E removeFirst(){ }
-  public E removeLast(){ }
   public E getFirst(){ }
   public E getLast(){ }
   */
