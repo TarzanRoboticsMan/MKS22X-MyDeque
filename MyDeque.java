@@ -1,11 +1,10 @@
-public class MyDeque<E>{
+ public class MyDeque<E>{
   private E[] data;
   private int size, start, end; //Start as 0 because of int default
 
   @SuppressWarnings("unchecked")
   public MyDeque(){
     data = (E[])new Object[10];
-
   }
   @SuppressWarnings("unchecked")
   public MyDeque(int initialCapacity){
@@ -24,8 +23,17 @@ public class MyDeque<E>{
     }
     return ans+"}";
   }
+
+  public void addFirst(E element){
+    if(element==null) throw(NullPointerException e);
+    if(size==data.size) resize();
+    if(start==0) start=data.length;
+    data[--start]=element; //prefix -- returns the new value instead of old
+  }
+  private void resize(){
+    return;
+  }
   /*
-  public void addFirst(E element){ }
   public void addLast(E element){ }
   public E removeFirst(){ }
   public E removeLast(){ }
