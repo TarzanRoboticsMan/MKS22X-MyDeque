@@ -30,8 +30,15 @@
     if(start==0) start=data.length;
     data[--start]=element; //prefix -- returns the new value instead of old
   }
+
+  @SuppressWarnings("unchecked")
   private void resize(){
-    return;
+    newData = (E[])new Object[data.length*2];
+    for(int x=start, int i=0;x!=end;x++,i++){
+      if(x=data.length) x=0;
+      newData[i]=data[x];
+    }
+    data=newData;
   }
   /*
   public void addLast(E element){ }
