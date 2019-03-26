@@ -9,11 +9,11 @@ public class Calculator{
     String[] vals = s.split(" ");
     MyDeque<Double> stack = new MyDeque<Double>();
     for(String x:vals){
-      if(x=="+") stack.addLast(stack.removeLast()+stack.removeLast());
-      else if(x=="-") stack.addLast(0-stack.removeLast()+stack.removeLast());
-      else if(x=="*") stack.addLast(stack.removeLast()*stack.removeLast());
-      else if(x=="/") stack.addLast(1/stack.removeLast()*stack.removeLast());
-      else if(x=="%"){
+           if("+".equals(x)) stack.addLast(stack.removeLast()+stack.removeLast());
+      else if("-".equals(x)) stack.addLast(0-stack.removeLast()+stack.removeLast());
+      else if("*".equals(x)) stack.addLast(stack.removeLast()*stack.removeLast());
+      else if("/".equals(x)) stack.addLast(1/stack.removeLast()*stack.removeLast());
+      else if("%".equals(x)){
         Double last = stack.removeLast();
         stack.addLast(stack.removeLast()%last);
       }
