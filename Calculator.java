@@ -5,7 +5,7 @@ public class Calculator{
     public static double eval(String s){
       String[] vals = s.split(" ");
       MyDeque stack = new MyDeque();
-      for(x:vals){
+      for(String x:vals){
         if(x=="+") stack.addLast(stack.removeLast()+stack.removeLast());
         else if(x=="-") stack.addLast(0-stack.removeLast()+stack.removeLast());
         else if(x=="*") stack.addLast(stack.removeLast()*stack.removeLast());
