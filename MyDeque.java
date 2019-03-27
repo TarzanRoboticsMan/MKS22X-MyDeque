@@ -61,6 +61,7 @@ import java.util.NoSuchElementException;
       if(x==data.length) x=0;
       newData[newEnd++]=data[x]; //Pulls value of newEnd and THEN adds 1
     }
+    newData[newEnd]=data[end];
     data=newData;
     start=0; end=newEnd;
   }

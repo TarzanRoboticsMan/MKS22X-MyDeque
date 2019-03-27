@@ -9,8 +9,7 @@ public class Calculator{
     String[] vals = s.split(" ");
     MyDeque<Double> stack = new MyDeque<Double>();
     for(String x:vals){
-      System.out.println(x);
-      System.out.println(stack);
+      System.out.println(x); System.out.println(stack);
            if("+".equals(x)) stack.addLast(stack.removeLast()+stack.removeLast());
       else if("-".equals(x)) stack.addLast(0-stack.removeLast()+stack.removeLast());
       else if("*".equals(x)) stack.addLast(stack.removeLast()*stack.removeLast());
@@ -20,6 +19,7 @@ public class Calculator{
         stack.addLast(stack.removeLast()%last);
       }
       else stack.addLast(Double.parseDouble(x));
+      System.out.println(stack); System.out.println("\n");
     }
     return stack.getLast();
   }
